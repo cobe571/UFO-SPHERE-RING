@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+     =========================================================
+                     UFOv2 Yoke Animation file
+         
+                    Patrizio MELIS : Sep. 2019
+		   
+                          GNU GPL v.2
+     =========================================================
+-->
+
+<PropertyList>
+
+  <path>yoke.ac</path>
+
+  <animation>
+    <type>range</type>
+    <min-m>  0 </min-m>
+    <max-m> 35 </max-m>
+  </animation>
+    
+  <animation>
+    <!-- Objects List -->
+    <object-name>UFOv2-Cockpit-Yoke</object-name>	
+    
+  </animation>
+
+  <animation>
+    <!-- Objects Linked To Texture -->
+    <type>material</type>
+    <object-name>UFOv2-Cockpit-Yoke</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>interior</texture-prop>
+    <texture>interior.jpg</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+
+  <animation>
+    <name>Complete-Yoke</name>
+    <!-- Objects Put On List For Main Animation -->
+    <object-name>UFOv2-Cockpit-Yoke</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Complete-Yoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>9</factor>
+    <center>
+          <x-m>  0.03536 </x-m>
+          <y-m>  0.36390 </y-m>
+          <z-m>  1.24938 </z-m>
+    </center>
+        <axis>
+          <x>  0 </x>
+          <y> -1 </y>
+          <z>  0 </z>
+        </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Complete-Yoke</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>9</factor>
+    <center>
+          <x-m>  0.03536 </x-m>
+          <y-m>  0.36390 </y-m>
+          <z-m>  1.24938 </z-m>
+    </center>
+        <axis>
+          <x> -1 </x>
+          <y>  0 </y>
+          <z>  0 </z>
+        </axis>
+  </animation>
+
+</PropertyList>

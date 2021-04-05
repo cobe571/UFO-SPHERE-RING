@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- =====================================
+        Alien FG "Pilot" Animation file
+         
+          Patrizio MELIS : Sep. 2019
+		   
+		         GNU GPL v.2
+     =====================================
+-->
+<PropertyList>
+
+  <path>AlienFG.ac</path>
+
+  <animation>
+    <!-- Lista Oggetti opachi -->
+	
+    <object-name>AlienFG-Boots</object-name>
+    <object-name>AlienFG-Head</object-name>
+    <object-name>AlienFG-Suit</object-name>
+    <object-name>AlienFG-left_eye</object-name>
+    <object-name>AlienFG-right_eye</object-name>
+  </animation>
+  
+  <!-- Animazione della testa -->
+
+  <animation>
+    <name>Head-Animation</name>
+    <object-name>AlienFG-Head</object-name>
+    <object-name>AlienFG-left_eye</object-name>
+    <object-name>AlienFG-right_eye</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Head-Animation</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -15 </factor> 
+    <center>
+      <x-m>  0.57345 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.68942 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Head-Animation</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-25</factor>
+    <center>
+      <x-m>  0.57345 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.68942 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Head-Animation</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> -10.0</factor>
+    <center>
+      <x-m>  0.57345 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  1.68942 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+</PropertyList>

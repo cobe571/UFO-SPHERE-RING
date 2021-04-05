@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+     =========================================================
+                   UFOv2 Throttle Animation file
+         
+                    Patrizio MELIS : Sep. 2019
+		   
+                          GNU GPL v.2
+     =========================================================
+-->
+
+<PropertyList>
+
+  <path>throttle.ac</path>
+    
+  <animation>
+    <!-- Objects List -->
+    <object-name>UFOv2-Cockpit-Throttle</object-name>	
+    
+  </animation>
+
+  <animation>
+    <!-- Objects Linked To Texture -->
+    <type>material</type>
+    <object-name>UFOv2-Cockpit-Throttle</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>interior</texture-prop>
+    <texture>interior.jpg</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+
+  <animation>
+    <name>Complete-Throttle</name>
+    <!-- Objects Put On List For Main Animation -->
+    <object-name>UFOv2-Cockpit-Throttle</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Complete-Throttle</object-name>
+    <property>controls/engines/engine[0]/throttle</property>
+    <factor> -20 </factor>
+    <center>
+          <x-m>  0.03536 </x-m>
+          <y-m> -0.36040 </y-m>
+          <z-m>  1.24938 </z-m>
+    </center>
+        <axis>
+          <x>  0 </x>
+          <y>  1 </y>
+          <z>  0 </z>
+        </axis>
+  </animation>
+
+</PropertyList>

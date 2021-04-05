@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<!--
+Author : Syd Adams
+Primus 2000 MFD
+-->
+<PropertyList>
+
+    <path>mfd3d.ac</path>
+	
+	<!-- rembrandt auto switching for glass -->
+  <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[6]</property>
+        <value>9</value>
+      </greater-than>
+	   <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+	<object-name>MFD.hsi.002</object-name>
+<object-name>MFD.bkg.001</object-name>
+</effect>
+	
+
+    <panel>
+        <name>panel-area</name>
+        <path>Aircraft/Westland_Lynx-AH7/Models/Instruments/MFD/nd.xml</path>
+        <bottom-left>
+            <x-m>0.00025</x-m>
+            <y-m>-0.080</y-m>
+            <z-m>-0.080</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.00025</x-m>
+            <y-m>0.080</y-m>
+            <z-m>-0.080</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.00025</x-m>
+            <y-m>-0.080</y-m>
+            <z-m>0.108</z-m>
+        </top-left>
+    </panel>
+
+	
+	
+    
+	
+	<model>
+        <name>Mtext3d</name>
+        <path>Aircraft/Westland_Lynx-AH7/Models/Instruments/MFD/Mtext3d.xml</path>
+        <offsets>
+            <x-m>0.0005</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>MFD.hsi</object-name>
+        <property>orientation/heading-magnetic-deg</property>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+        <center>
+            <x>0.5</x>
+            <y>0.5</y>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.tcas-off</object-name>
+        <condition>
+            <not>
+                <property>instrumentation/primus2000/dc840/tcas</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MFD.hdg-bug</object-name>
+        <property>autopilot/internal/heading-bug-error-deg</property>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.vor</object-name>
+        <condition>
+            <property>instrumentation/primus2000/dc840/mfd-wx</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.apt</object-name>
+        <condition>
+            <property>instrumentation/primus2000/dc840/mfd-wx</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.hdg-bug</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>-55.0</value>
+                </greater-than>
+                <less-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>55.0</value>
+                </less-than>
+                <property>instrumentation/primus2000/dc840/mfd-map</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Lhdg-arrow</object-name>
+        <condition>
+            <and>
+                <less-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>-55</value>
+                </less-than>
+                <property>instrumentation/primus2000/dc840/mfd-map</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Rhdg-arrow</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>autopilot/internal/heading-bug-error-deg</property>
+                    <value>55</value>
+                </greater-than>
+                <property>instrumentation/primus2000/dc840/mfd-map</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.tcas-auto</object-name>
+        <condition>
+            <property>instrumentation/primus2000/dc840/tcas</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.hsi</object-name>
+        <object-name>MFD.hdg-bracket</object-name>
+        <object-name>MagHdg</object-name>
+        <object-name>MFD.staticplane</object-name>
+        <condition>
+            <property>instrumentation/primus2000/dc840/mfd-map</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MFD.trunorth</object-name>
+        <object-name>MFD.plane</object-name>
+         <condition>
+            <not>
+                <property>instrumentation/primus2000/dc840/mfd-map</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MFD.menu</object-name>
+        <property>instrumentation/primus2000/mfd/menu-num</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MFD.plane</object-name>
+        <property>orientation/heading-deg</property>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.018</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	<!-- terrain map 
+	
+    <model>
+		<name>ai1</name>
+    <path>Aircraft/Westland_Lynx-AH7/Models/Instruments/MFD/map/map.xml</path>
+    <offsets> 
+        <x-m>-0.0025</x-m>
+        <y-m>0</y-m>
+        <z-m>0</z-m>
+    <pitch-deg>0</pitch-deg>
+    </offsets>
+    </model> -->
+
+	<!-- Buttons -->
+	<!-- Top row from left to right -->
+	<!-- Arport on/off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>buttont1</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				<property>instrumentation/nd/display/arpt</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	
+	<!-- fix On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>buttont2</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/nd/display/fix</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	
+	<!-- tcas On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>buttont3</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/nd/display/tcas</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	<!-- vor On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>buttont4</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/nd/display/vor</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	
+		<!-- mfd range -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>buttont5</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/nd/display/vor</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	<!--  buttons  buttont5   buttont6   not currently used -->
+	
+	<!-- Left side buttons -->
+	
+	<!-- vor On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>button1</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/primus2000/dc840/mfd-map</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+	
+	
+	<!-- wx On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>button5</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/primus2000/dc840/mfd-wx</property>
+			 
+			</binding>
+						<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/primus2000/dc840/wx</property>
+			 
+			</binding>
+		</action>
+	</animation>
+
+
+<!-- right side buttons -->
+	
+	<!-- vor On/Off -->
+ <animation>
+		<type>pick</type>
+		 <visible>true</visible>
+		<object-name>button9</object-name>
+		
+		<action>
+			<button>0</button>
+			  <repeatable>true</repeatable>
+			<binding>
+				 <command>property-toggle</command>
+				 <property>instrumentation/primus2000/dc840/tcas</property>
+			 
+			</binding>
+		</action>
+	</animation>	
+
+
+<!-- range knob -->
+  <animation>
+        <type>pick</type>
+        <object-name>knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>bo105.set_range(1);</script>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>bo105.set_range(-1);</script>
+            </binding>
+        </action>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>bo105.set_range(1);</script>
+            </binding>
+        </action>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>bo105.set_range(-1);</script>
+            </binding>
+        </action>
+    </animation>	
+	
+	
+</PropertyList>

@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>ufo-sphere-ring.ac</path>
+
+ <!-- Objects Full List -->
+  <animation>
+    <!--  Opaque Objects List  -->
+    <object-name>Circle.000.0</object-name>
+    <object-name>Circle.000.1</object-name>
+    <object-name>Circle.001.0</object-name>
+    <object-name>Circle.001.1</object-name>
+    <object-name>Circle.002.0</object-name>
+    <object-name>Circle.002.1</object-name>
+    <object-name>Sphere.002</object-name>
+    <object-name>Sphere.003</object-name>
+    <object-name>Sphere.004</object-name>
+    <object-name>Sphere.005</object-name>
+    <object-name>Sphere.006</object-name>
+    <object-name>Sphere.007</object-name>
+    <object-name>Sphere.008</object-name>
+    <object-name>Sphere.009</object-name>
+    <object-name>Sphere.010</object-name>
+    <object-name>UFOv2-Cockpit-Basement</object-name>
+    <object-name>UFOv2-Cockpit-Dish</object-name>
+    <object-name>UFOv2-Cockpit-Panel</object-name>
+    <object-name>UFOv2-Cockpit-Seat</object-name>
+    <object-name>f-bird-01.016</object-name>
+    <object-name>f-bird-01.017</object-name>
+    <!-- Transparent Objects List -->
+    <object-name>Sphere.000</object-name>
+    <object-name>Sphere.001</object-name>
+  </animation>
+
+ <!-- Objects Linked To The Main Texture --> 
+  <animation>
+    <type>material</type>
+    <!--  Opaque Objects List  -->
+    <object-name>Circle.000.0</object-name>
+    <object-name>Circle.000.1</object-name>
+    <object-name>Circle.001.0</object-name>
+    <object-name>Circle.001.1</object-name>
+    <object-name>Circle.002.0</object-name>
+    <object-name>Circle.002.1</object-name>
+    <object-name>Sphere.003</object-name>
+    <object-name>Sphere.004</object-name>
+    <object-name>Sphere.005</object-name>
+    <object-name>Sphere.006</object-name>
+    <object-name>Sphere.007</object-name>
+    <object-name>Sphere.008</object-name>
+    <object-name>Sphere.009</object-name>
+    <object-name>Sphere.010</object-name>
+    <object-name>f-bird-01.016</object-name>
+    <object-name>f-bird-01.017</object-name>
+    <!-- Transparent Objects List -->
+    <object-name>Sphere.000</object-name>
+    <object-name>Sphere.001</object-name>
+    
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>Texture</texture-prop>
+    <texture>ufo-sphere-ring.png</texture>
+  </animation>
+
+ <!-- Objects Linked To The Interior Texture -->
+  <animation>
+    <type>material</type>
+    <object-name>Sphere.002</object-name>
+    <object-name>UFOv2-Cockpit-Basement</object-name>
+    <object-name>UFOv2-Cockpit-Dish</object-name>
+    <object-name>UFOv2-Cockpit-Panel</object-name>
+    <object-name>UFOv2-Cockpit-Seat</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>Interior</texture-prop>
+    <texture>Interior.jpg</texture>
+  </animation>
+
+ <!-- Effects Reflect Over Fuselage -->
+  <effect>
+    <inherits-from>Aircraft/UFO-SPHERE-RING/Models/Effects/Fuselage/Fuselagereflect</inherits-from>
+    <!--  Opaque Objects List  -->
+    <object-name>Circle.000.0</object-name>
+    <object-name>Circle.000.1</object-name>
+    <object-name>Circle.001.0</object-name>
+    <object-name>Circle.001.1</object-name>
+    <object-name>Circle.002.0</object-name>
+    <object-name>Circle.002.1</object-name>
+    <object-name>Sphere.002</object-name>
+    <object-name>Sphere.003</object-name>
+    <object-name>Sphere.004</object-name>
+    <object-name>Sphere.005</object-name>
+    <object-name>Sphere.006</object-name>
+    <object-name>UFOv2-Cockpit-Basement</object-name>
+    <object-name>UFOv2-Cockpit-Dish</object-name>
+    <object-name>UFOv2-Cockpit-Panel</object-name>
+    <object-name>UFOv2-Cockpit-Seat</object-name>
+    <object-name>f-bird-01.016</object-name>
+    <object-name>f-bird-01.017</object-name>
+  </effect>
+
+ <!-- Glass-Chrome Effect -->
+  <effect>
+    <inherits-from>Aircraft/UFO-SPHERE-RING/Models/Effects/Glass/glass-chrome</inherits-from>
+    <!--  Opaque Objects List  -->
+    <object-name>Circle.000.1</object-name>
+    <object-name>Circle.001.1</object-name>
+    <object-name>Circle.002.1</object-name>
+  </effect>
+
+ <!--  Rembrandt Effect  -->
+  <effect>
+    <inherits-from>Aircraft/UFO-SPHERE-RING/Models/Effects/Glass/glass</inherits-from>
+    <!-- Transparent Objects List -->
+    <object-name>Sphere.000</object-name>
+    <object-name>Sphere.001</object-name>
+  </effect>
+ 
+ <!-- SPINNING ANIMATIONS -->
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.000.0</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>  0  </x>
+        <y>  0  </y>
+        <z>  1  </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.000.1</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>   0  </x>
+        <y>   0  </y>
+        <z>  -1  </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.001.0</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>  0  </x>
+        <y>  1  </y>
+        <z>  0  </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.001.1</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>   0  </x>
+        <y>  -1  </y>
+        <z>   0  </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.002.0</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>  1  </x>
+        <y>  0  </y>
+        <z>  0  </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>Circle.002.1</object-name>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.12</factor>
+    <center>
+        <x-m> 0.00000 </x-m>
+        <y-m> 0.00000 </y-m>
+        <z-m> 1.34403 </z-m>
+    </center>
+    <axis>
+        <x>  -1  </x>
+        <y>   0  </y>
+        <z>   0  </z>
+    </axis>
+  </animation>
+
+  <animation>
+  <type>spin</type>
+  <object-name>Sphere.007</object-name>
+  <object-name>Sphere.010</object-name>
+  <property>/velocities/airspeed-kt</property>
+  <factor>0.12</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>  0  </x>
+   <y>  0  </y>
+   <z>  1  </z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>spin</type>
+  <object-name>Sphere.008</object-name>
+  <object-name>Sphere.009</object-name>
+  <property>/velocities/airspeed-kt</property>
+  <factor>0.12</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>  0  </x>
+   <y>  0  </y>
+   <z> -1  </z>
+  </axis>
+ </animation>
+
+ <!-- INTERIOR -->
+  <!-- AlienFG -->
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/AlienFG/AlienFG.xml</path>
+    <offsets>
+        <x-m> 0.0 </x-m>
+        <y-m> 0.0 </y-m>
+        <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+ <!-- Instruments  -->
+  <!-- HUD -->
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/HUD/HUD.xml</path>
+    <offsets>
+      <x-m> -0.17486 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m>  1.56755 </z-m>
+    </offsets>
+  </model>
+
+  <!-- YOKE -->
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/yoke/yoke.xml</path>
+    <offsets>
+        <x-m> 0.0 </x-m>
+        <y-m> 0.0 </y-m>
+        <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- THROTTLE -->
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/throttle/throttle.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!--  Navigation Lights  -->
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/Lights/WhiteLight.xml</path>
+    <offsets>
+      <x-m> 0.00000 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 2.34648 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UFO-SPHERE-RING/Models/Lights/WhiteLight.xml</path>
+    <offsets>
+      <x-m> 0.00000 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.34738 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

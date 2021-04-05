@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!-- License:  GNU GPLv2                   -->
+<!-- Author:   Patrizio Melis              -->
+<!-- Email:    cobe571@gmail.com           -->
+
+<PropertyList>
+
+ <sim>
+
+  <description>UFO-SPHERE-RING</description>
+  <author>Patrizio Melis (3D, FDM)</author>
+  <status>alpha</status>
+
+  <flight-model>ufo</flight-model>
+
+  <startup>
+   <splash-texture>Aircraft/UFO-SPHERE-RING/splash.jpg</splash-texture>
+  </startup>
+
+  <sound>
+   <path type="string">Aircraft/UFO-SPHERE-RING/Sounds/sound.xml</path>
+  </sound>
+
+  <submodels> 
+<!--  -->
+  </submodels>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+
+  <model>
+   <path>Aircraft/UFO-SPHERE-RING/Models/ufo-sphere-ring.xml</path>
+  </model>
+
+  <view n="0">
+      <internal archive="y">true</internal>
+      <config>
+        <x-offset-m archive="y">  0.00 </x-offset-m>	<!-- Right -->
+        <y-offset-m archive="y">  1.75 </y-offset-m>	<!-- Up    -->
+        <z-offset-m archive="y">  0.46 </z-offset-m>	<!-- Back  -->
+        <default-field-of-view-deg> 85 </default-field-of-view-deg>
+        <pitch-offset-deg> -6.3 </pitch-offset-deg>
+      </config>
+  </view>
+  
+  <view n="100">
+     <name>Pilot cam</name>
+      <internal archive="y">false</internal>
+       <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+        <x-offset-m type="double">  0.00 </x-offset-m> <!--left-->
+        <y-offset-m type="double">  1.72 </y-offset-m> <!--up-->
+        <z-offset-m type="double"> -0.10 </z-offset-m> <!--back-->
+        <pitch-offset-deg>3</pitch-offset-deg>
+        <heading-offset-deg>180</heading-offset-deg>
+        <default-field-of-view-deg>65</default-field-of-view-deg>
+       </config>
+    </view>
+
+  <help>
+   <title>UFO-SPHERE-RING</title>
+ 
+  </help>
+
+  <multiplay>
+    <generic>
+       <float n="0"> 1.0 </float>
+       <float n="1"> 1.0 </float>
+    </generic>
+  </multiplay>
+
+</sim>
+
+ <nasal>
+ </nasal>
+
+</PropertyList>
